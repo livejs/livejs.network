@@ -1,0 +1,105 @@
+@import '_reset.scss';
+@import '_settings.scss';
+
+// structure & main partials ~~~~~~~~~~~~~~
+html {background-color: #fafafa;}
+body {
+  width: 100%;
+  overflow: auto;
+  font-family: 'Anom Pro', monospace ;
+  font-size: 100%;
+  color: #111111;
+  line-height: 1.2;
+}
+.container {
+}
+header {
+  margin-bottom: $verticalSpace; padding: $verticalSpace $gutter $verticalSpace*3;
+  @include backPattern($brandOne);
+  border: 6px solid darken($brandOne, 15%);
+  border-width: 6px 0px;
+  text-align: center; color:lighten($brandOne, 50%);
+  p {@extend .wrapper}
+}
+
+// basic element styling ~~~~~~~~~~~~~~~~~~~~~~
+article {
+  padding: 0px 1em;
+}
+
+
+h1, h2 {margin: 0.5em 0px;}
+h1 {font-size: 3em;}
+h2 {font-size: 2em;}
+h2 {
+  border-bottom: 2px solid #858585;
+}
+p {
+  margin-bottom: 0.8em;
+}
+p.lede {font-size: 1.3em;}
+a {color: #e4439a;}
+a:hover {text-decoration: none;}
+
+// specifics ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// members article
+.members {
+  padding: $verticalSpace*2 $gutter;
+  border: 6px solid $brandTwo; border-width: 6px 0px;
+  color: darken($brandTwo, 30%);
+
+  @include backPattern(lighten($brandTwo,60%));
+  li {
+    @extend .wrapper;
+    list-style: none;
+    overflow: hidden;
+    h2, p {float:right; width: 60%;}
+    img {
+      float: left;
+      width:36%; height:auto;
+    }
+
+    &:nth-of-type(2n) {
+      h2, p {float:left;}
+      img {float:right; margin-left:$gutter;}
+    }
+    &:nth-of-type(2n-1) {
+      img {margin-right:$gutter;}
+    }
+  }
+}
+
+
+// get in touch
+.contact {
+
+  padding: $verticalSpace $gutter; margin-top:$verticalSpace;
+  border: 6px solid $brandThree; border-width: 6px 0px;
+  color: darken($brandThree, 30%);
+
+  h2, h3, p {@extend .wrapper; padding:$verticalSpace 0px;}
+
+}
+
+
+
+
+/* screen sizes: > 960, 480 < 960, 0 < 480 */
+// @media screen and (min-width: 980px) {
+//   body {
+//       border-top: 5px solid blue;
+//       font-size: 112%;
+//   }
+// }
+// @media screen and (max-width: 980px) {
+//   body {
+//       border-top: 5px solid purple;
+//   }
+// }
+// @media screen and (max-width: 480px) {
+//   body {
+//       border-top: 5px solid pink;
+//       font-size: 90%;
+//   }
+// }
