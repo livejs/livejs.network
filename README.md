@@ -1,5 +1,6 @@
-# Web VJ Group
-Audio visual browser shizzle
+# { Live : JS }
+
+Live audio visual performances with JavaScript. [Website here](http://livejs.network/)
 
 ## Who are you?
 We're a group of web devs who got together due to a common love of all things audio, visual and MIDI \o/
@@ -22,6 +23,6 @@ Join our Slack! We thought it the best place to start, just to come and chat... 
 - Branch
 - Edit the things
 - PR
-- Site runs from `docs` folder in master branch, so make sure that's built and included
+- Site runs from `docs` folder in master branch, so make sure that's built and included `npm build`
 - If you break the site @Rumyra will come after you
 
