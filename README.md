@@ -1,4 +1,4 @@
-# {  Live : JS }
+# { Live : JS }
 
 Live audio visual performances with JavaScript. [Website here](http://livejs.network/)
 
