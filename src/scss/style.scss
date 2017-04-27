@@ -6,10 +6,10 @@ html {background-color: $white;}
 body {
   width: 100%;
   overflow: auto;
-  font-family: 'Anom Pro', monospace ;
+  font-family: 'Klartext', monospace ;
   font-size: 100%;
   color: $white;
-  line-height: 1.2;
+  line-height: 1.2; letter-spacing:0.5px;
 }
 .container {
   background-color:$brandOne;
@@ -20,15 +20,21 @@ body {
     linear-gradient(-175deg, lighten($brandOne, 30%) 60%, transparent 60.1%)
   ;
 }
+
 header {
-  margin-bottom: $verticalSpace; padding: $verticalSpace $gutter $verticalSpace*6;
+  margin-bottom: $verticalSpace;
+  padding: $verticalSpace*2 $gutter $verticalSpace*2;
   // @include backPattern($brandOne);
-  background-image:
-    linear-gradient(120deg, darken($brandFour,15%) 18%, transparent 18.1%),
-    linear-gradient(178deg, $brandFour 88%, transparent 88.1%);
-  text-align: right;
-  h1 {@extend .wrapper}
-  p {@extend .wrapper}
+  @include gradient($orange, $purple, 120deg);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+  h1 {@extend .wrapper; text-align:center;}
+  p {@extend .wrapper; margin: $verticalSpace auto;}
+
+  .see-next a {
+    display: inline-block;
+    background-color: $orange;
+  }
 }
 
 // basic element styling ~~~~~~~~~~~~~~~~~~~~~~
@@ -38,8 +44,13 @@ article {
 
 
 h1, h2 {
-  font-family: 'Sanotra', sans-serif;
   margin: 0.5em 0px;
+  text-shadow:
+    1px 1px 0px $white,
+    1px -1px 0px $white,
+    -1px -1px 0px $white,
+    -1px 1px 0px $white,
+  ;
 }
 h1 {font-size: 3.6em;}
 h2 {font-size: 2.4em;}
@@ -47,7 +58,7 @@ p {
   margin-bottom: 0.8em;
 }
 p.lede {font-size: 1.3em;}
-a {color: #e4439a;}
+a {color: $white;}
 a:hover {text-decoration: none;}
 
 // specifics ~~~~~~~~~~~~~~~~~~~~~~~~~

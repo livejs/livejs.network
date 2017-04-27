@@ -1,9 +1,22 @@
+// CONTENTS
+//
+// fonts
+// colours & gradients
+// sizing
+// 
+// temp colour (for top of site when I'm designing)
+// legacy
+//
+
 
 // fonts
 @font-face {
-  font-family: 'Anom Pro';
+  font-family: 'Klartext';
   font-weight: normal;
-  src: url('fonts/AnonymousPro-Regular.ttf');
+  src:
+    url('../fonts/KlartextMono-Light.woff') format('woff'),
+    url('../fonts/KlartextMono-Light.woff2') format('woff2')
+  ;
 }
 
 // colours & patterns
@@ -18,11 +31,37 @@ $yellow:hsla(63, 94%, 43%, 1);
 $orange:hsla(22, 97%, 55%, 1);
 $turquoise:hsla(173, 62%, 45%, 1);
 
+// TODO remove brand references - it's cool to use colours here
+
 $brandOne:$turquoise;
 $brandTwo:$yellow;
 $brandThree:$orange;
 $brandFour:$purple;
 
+
+@mixin gradient($colOne, $colTwo, $deg) {
+  background-image:
+    linear-gradient($deg, $colOne, $colTwo)
+  ;
+}
+
+// LAYOUT ~~~~~~~~~~~~~~~~~
+// sizing
+$verticalSpace: 1.5em;
+$gutter: 1.5em;
+
+.wrapper {
+  display: block;
+  max-width: 880px;
+  margin: 0px auto;
+}
+
+// screen sizes
+$screenBig: 980px;
+$screenSmall: 480px;
+
+
+// TEMP COLLOUR ~~~~~~~~~~~~~~~~~~~~
 .temp-colour {
   table {width:100%;}
   // main orig brand cols
@@ -56,6 +95,7 @@ $brandFour:$purple;
   }
 }
 
+// LEGACY, but I hate getting rid of old code
 @mixin backPattern($colour) {
   background-color: $colour;
   background-image:
@@ -74,20 +114,4 @@ $brandFour:$purple;
   ;
   background-size:3px 3px, 20px 20px;
 }
-
-// LAYOUT ~~~~~~~~~~~~~~~~~
-// sizing
-$verticalSpace: 1.5em;
-$gutter: 1.5em;
-
-.wrapper {
-  display: block;
-  max-width: 880px;
-  margin: 0px auto;
-}
-
-// screen sizes
-$screenBig: 980px;
-$screenSmall: 480px;
-
 
