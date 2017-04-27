@@ -2,23 +2,32 @@
 @import '_settings.scss';
 
 // structure & main partials ~~~~~~~~~~~~~~
-html {background-color: #fafafa;}
+html {background-color: $white;}
 body {
   width: 100%;
   overflow: auto;
   font-family: 'Anom Pro', monospace ;
   font-size: 100%;
-  color: #111111;
+  color: $white;
   line-height: 1.2;
 }
 .container {
+  background-color:$brandOne;
+  background-image:
+    linear-gradient(-100deg, darken($brandOne, 30%) 30%, transparent 30.1%),
+    linear-gradient(-125deg, darken($brandOne, 15%) 40%, transparent 40.1%),
+    linear-gradient(-150deg, $brandOne 50%, transparent 50.1%),
+    linear-gradient(-175deg, lighten($brandOne, 30%) 60%, transparent 60.1%)
+  ;
 }
 header {
-  margin-bottom: $verticalSpace; padding: $verticalSpace $gutter $verticalSpace*3;
-  @include backPattern($brandOne);
-  border: 6px solid darken($brandOne, 15%);
-  border-width: 6px 0px;
-  text-align: center; color:lighten($brandOne, 50%);
+  margin-bottom: $verticalSpace; padding: $verticalSpace $gutter $verticalSpace*6;
+  // @include backPattern($brandOne);
+  background-image:
+    linear-gradient(120deg, darken($brandFour,15%) 18%, transparent 18.1%),
+    linear-gradient(178deg, $brandFour 88%, transparent 88.1%);
+  text-align: right;
+  h1 {@extend .wrapper}
   p {@extend .wrapper}
 }
 
@@ -28,12 +37,12 @@ article {
 }
 
 
-h1, h2 {margin: 0.5em 0px;}
-h1 {font-size: 3em;}
-h2 {font-size: 2em;}
-h2 {
-  border-bottom: 2px solid #858585;
+h1, h2 {
+  font-family: 'Sanotra', sans-serif;
+  margin: 0.5em 0px;
 }
+h1 {font-size: 3.6em;}
+h2 {font-size: 2.4em;}
 p {
   margin-bottom: 0.8em;
 }
@@ -46,10 +55,9 @@ a:hover {text-decoration: none;}
 // members article
 .members {
   padding: $verticalSpace*2 $gutter;
-  border: 6px solid $brandTwo; border-width: 6px 0px;
-  color: darken($brandTwo, 30%);
 
-  @include backPattern(lighten($brandTwo,60%));
+  // @include backPattern(lighten($brandTwo,60%));
+  
   li {
     @extend .wrapper;
     list-style: none;
@@ -70,14 +78,20 @@ a:hover {text-decoration: none;}
   }
 }
 
+.work {
+  padding: $verticalSpace $gutter;
+
+  background-image:
+    linear-gradient(185deg, $brandTwo 80%, transparent 80%);
+}
+
 
 // get in touch
 .contact {
 
-  padding: $verticalSpace $gutter; margin-top:$verticalSpace;
-  border: 6px solid $brandThree; border-width: 6px 0px;
-  color: darken($brandThree, 30%);
-
+  padding: $verticalSpace $gutter;
+  background-image:
+    linear-gradient(185deg, transparent 10%, $brandThree 10%);
   h2, h3, p {@extend .wrapper; padding:$verticalSpace 0px;}
 
 }
