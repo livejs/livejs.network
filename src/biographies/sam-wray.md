@@ -1,6 +1,6 @@
 ---
 name: Sam Wray
-order: 4
+order: 3
 collection: biography
 image: prof-sam.png
 image-alt: Head shot of Sam Wray

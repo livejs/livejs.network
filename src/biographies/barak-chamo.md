@@ -1,6 +1,6 @@
 ---
 name: Barak Chamo
-order: 5
+order: 7
 collection: biography
 image: prof-tim.png
 image-alt: Head shot of Barak Chamo

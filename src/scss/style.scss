@@ -2,31 +2,44 @@
 @import '_settings.scss';
 
 // structure & main partials ~~~~~~~~~~~~~~
-html {background-color: $white;}
+html {
+  background-color: $orange;
+  @include gradient($orange, $yellow, 80deg);
+}
 body {
   width: 100%;
   overflow: auto;
+
+  background-image:
+    linear-gradient(-160deg, transparent 65%, $turquoise 65.1%, $turquoise 90%, transparent 90.1%),
+    linear-gradient(-130deg, transparent 50%, lighten($turquoise, 25%) 50.1%, lighten($turquoise, 25%) 80%, transparent 80.1%),
+    linear-gradient(-120deg, transparent 32%, $turquoise 32.1%, $turquoise 60%, transparent 60.1%)
+  ;
+  
   font-family: 'Klartext', monospace ;
   font-size: 100%;
   color: $white;
   line-height: 1.2; letter-spacing:0.5px;
 }
+
+#grad {
+  position: absolute; top:0px; right:0px;
+  width:30vw; min-height:2500px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 90% 100%);
+  @include gradient($turquoise, $purple, 120deg);
+
+  z-index:1;
+}
+
 .container {
-  background-color:$brandOne;
-  background-image:
-    linear-gradient(-100deg, darken($brandOne, 30%) 30%, transparent 30.1%),
-    linear-gradient(-125deg, darken($brandOne, 15%) 40%, transparent 40.1%),
-    linear-gradient(-150deg, $brandOne 50%, transparent 50.1%),
-    linear-gradient(-175deg, lighten($brandOne, 30%) 60%, transparent 60.1%)
-  ;
 }
 
 header {
-  margin-bottom: $verticalSpace;
   padding: $verticalSpace*2 $gutter $verticalSpace*2;
   // @include backPattern($brandOne);
   @include gradient($orange, $purple, 120deg);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  position:relative; z-index:2;
 
   h1 {@extend .wrapper; text-align:center;}
   p {@extend .wrapper; margin: $verticalSpace auto;}
@@ -40,6 +53,7 @@ header {
 // basic element styling ~~~~~~~~~~~~~~~~~~~~~~
 article {
   padding: 0px 1em;
+  position:relative; z-index:2;
 }
 
 
@@ -55,6 +69,7 @@ h1, h2 {
 h1 {font-size: 3.6em;}
 h2 {font-size: 2.4em;}
 p {
+  font-size: 1.3em;
   margin-bottom: 0.8em;
 }
 p.lede {font-size: 1.3em;}
@@ -65,14 +80,16 @@ a:hover {text-decoration: none;}
 
 // members article
 .members {
-  padding: $verticalSpace*2 $gutter;
+  padding:$verticalSpace*2 0px;
 
   // @include backPattern(lighten($brandTwo,60%));
   
   li {
     @extend .wrapper;
+    padding: 0px $gutter;
     list-style: none;
-    overflow: hidden;
+    overflow: auto;
+    h2 {text-transform: lowercase;}
     h2, p {float:right; width: 60%;}
     img {
       float: left;
@@ -86,6 +103,25 @@ a:hover {text-decoration: none;}
     &:nth-of-type(2n-1) {
       img {margin-right:$gutter;}
     }
+
+    @media screen and (max-width: 660px) {
+
+      h2, p {float:none; width:100%;}
+      &:nth-of-type(2n) {
+        img {
+          float:none; display:block;
+          margin:0px auto; width:60%;
+        }
+      }
+      &:nth-of-type(2n-1) {
+        img {
+          float:none; display:block;
+          margin:0px auto; width:60%;
+        }
+      }
+
+    }
+
   }
 }
 
@@ -99,10 +135,12 @@ a:hover {text-decoration: none;}
 
 // get in touch
 .contact {
-
   padding: $verticalSpace $gutter;
-  background-image:
-    linear-gradient(185deg, transparent 10%, $brandThree 10%);
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+
+  background-color: $orange;
+  @include gradient($orange, $yellow, 80deg);
+  
   h2, h3, p {@extend .wrapper; padding:$verticalSpace 0px;}
 
 }

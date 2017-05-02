@@ -1,6 +1,6 @@
 ---
 name: Matt McKegg
-order: 7
+order: 4
 collection: biography
 image: prof-matt.png
 image-alt: Head shot of Matt
