@@ -14,7 +14,7 @@ var partials = require('metalsmith-discover-partials');
 Metalsmith(__dirname)
   .metadata({
     site: {
-      title: '{ Live : JS }',
+      title: 'live:js',
       description: 'Audio visual browser awesome',
       generator: 'Metalsmith',
       url: 'http://livejs.network/'

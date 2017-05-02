@@ -1,18 +1,67 @@
+// CONTENTS
+//
+// fonts
+// colours & gradients
+// sizing
+// 
+// temp colour (for top of site when I'm designing)
+// legacy
+//
+
 
 // fonts
 @font-face {
-  font-family: 'Anom Pro';
+  font-family: 'Klartext';
   font-weight: normal;
-  src: url('fonts/AnonymousPro-Regular.ttf');
+  src:
+    url('../fonts/KlartextMono-Light.woff') format('woff'),
+    url('../fonts/KlartextMono-Light.woff2') format('woff2')
+  ;
 }
 
 // colours & patterns
-$brandOne: hsla(331, 64%, 46%, 1);
-$brandTwo: hsla(180, 63%, 33%, 1);
-$brandThree: hsla(53, 77%, 55%, 1);
-// $brandLight:;
-// $brandDark:;
+$white:hsla(180, 20%, 98%, 1);
+$black:hsla(180, 2%, 11%, 1);
+$lgrey:hsla(168, 17%, 94%, 1);
+$mgrey:hsla(180, 6%, 87%, 1);
+$dgrey:hsla(165, 3%, 75%, 1);
 
+$purple:hsla(268, 46%, 50%, 1);
+$yellow:hsla(63, 94%, 43%, 1);
+$orange:hsla(22, 97%, 55%, 1);
+$turquoise:hsla(173, 62%, 45%, 1);
+
+// TODO remove brand references - it's cool to use colours here
+
+$brandOne:$turquoise;
+$brandTwo:$yellow;
+$brandThree:$orange;
+$brandFour:$purple;
+
+
+@mixin gradient($colOne, $colTwo, $deg) {
+  background-image:
+    linear-gradient($deg, $colOne, $colTwo)
+  ;
+}
+
+// LAYOUT ~~~~~~~~~~~~~~~~~
+// sizing
+$verticalSpace: 1.5em;
+$gutter: 1.5em;
+
+.wrapper {
+  display: block;
+  max-width: 880px;
+  margin: 0px auto;
+}
+
+// screen sizes
+$screenBig: 980px;
+$screenSmall: 480px;
+
+
+// TEMP COLLOUR ~~~~~~~~~~~~~~~~~~~~
 .temp-colour {
   table {width:100%;}
   // main orig brand cols
@@ -20,6 +69,7 @@ $brandThree: hsla(53, 77%, 55%, 1);
     td:nth-child(1) {background-color: $brandOne;}
     td:nth-child(2) {background-color: $brandTwo;}
     td:nth-child(3) {background-color: $brandThree;}
+    td:nth-child(4) {background-color: $brandFour;}
   }
   // light & dark variations
   tr:nth-of-type(2) {
@@ -37,9 +87,15 @@ $brandThree: hsla(53, 77%, 55%, 1);
     td:nth-child(10) {background-color: darken($brandThree, 15%);}
     td:nth-child(11) {background-color: lighten($brandThree, 30%);}
     td:nth-child(12) {background-color: lighten($brandThree, 40%);}
+
+    td:nth-child(13) {background-color: darken($brandFour, 30%);}
+    td:nth-child(14) {background-color: darken($brandFour, 15%);}
+    td:nth-child(15) {background-color: lighten($brandFour, 30%);}
+    td:nth-child(16) {background-color: lighten($brandFour, 40%);}
   }
 }
 
+// LEGACY, but I hate getting rid of old code
 @mixin backPattern($colour) {
   background-color: $colour;
   background-image:
@@ -58,20 +114,4 @@ $brandThree: hsla(53, 77%, 55%, 1);
   ;
   background-size:3px 3px, 20px 20px;
 }
-
-// LAYOUT ~~~~~~~~~~~~~~~~~
-// sizing
-$verticalSpace: 1.5em;
-$gutter: 1.5em;
-
-.wrapper {
-  display: block;
-  max-width: 880px;
-  margin: 0px auto;
-}
-
-// screen sizes
-$screenBig: 980px;
-$screenSmall: 480px;
-
 

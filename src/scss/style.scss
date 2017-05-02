@@ -2,58 +2,94 @@
 @import '_settings.scss';
 
 // structure & main partials ~~~~~~~~~~~~~~
-html {background-color: #fafafa;}
+html {
+  background-color: $orange;
+  @include gradient($orange, $yellow, 80deg);
+}
 body {
   width: 100%;
   overflow: auto;
-  font-family: 'Anom Pro', monospace ;
+
+  background-image:
+    linear-gradient(-160deg, transparent 65%, $turquoise 65.1%, $turquoise 90%, transparent 90.1%),
+    linear-gradient(-130deg, transparent 50%, lighten($turquoise, 25%) 50.1%, lighten($turquoise, 25%) 80%, transparent 80.1%),
+    linear-gradient(-120deg, transparent 32%, $turquoise 32.1%, $turquoise 60%, transparent 60.1%)
+  ;
+  
+  font-family: 'Klartext', monospace ;
   font-size: 100%;
-  color: #111111;
-  line-height: 1.2;
+  color: $white;
+  line-height: 1.2; letter-spacing:0.5px;
 }
+
+#grad {
+  position: absolute; top:0px; right:0px;
+  width:30vw; min-height:2500px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 90% 100%);
+  @include gradient($turquoise, $purple, 120deg);
+
+  z-index:1;
+}
+
 .container {
 }
+
 header {
-  margin-bottom: $verticalSpace; padding: $verticalSpace $gutter $verticalSpace*3;
-  @include backPattern($brandOne);
-  border: 6px solid darken($brandOne, 15%);
-  border-width: 6px 0px;
-  text-align: center; color:lighten($brandOne, 50%);
-  p {@extend .wrapper}
+  padding: $verticalSpace*2 $gutter $verticalSpace*2;
+  // @include backPattern($brandOne);
+  @include gradient($orange, $purple, 120deg);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  position:relative; z-index:2;
+
+  h1 {@extend .wrapper; text-align:center;}
+  p {@extend .wrapper; margin: $verticalSpace auto;}
+
+  .see-next a {
+    display: inline-block;
+    background-color: $orange;
+  }
 }
 
 // basic element styling ~~~~~~~~~~~~~~~~~~~~~~
 article {
   padding: 0px 1em;
+  position:relative; z-index:2;
 }
 
 
-h1, h2 {margin: 0.5em 0px;}
-h1 {font-size: 3em;}
-h2 {font-size: 2em;}
-h2 {
-  border-bottom: 2px solid #858585;
+h1, h2 {
+  margin: 0.5em 0px;
+  text-shadow:
+    1px 1px 0px $white,
+    1px -1px 0px $white,
+    -1px -1px 0px $white,
+    -1px 1px 0px $white,
+  ;
 }
+h1 {font-size: 3.6em;}
+h2 {font-size: 2.4em;}
 p {
+  font-size: 1.3em;
   margin-bottom: 0.8em;
 }
 p.lede {font-size: 1.3em;}
-a {color: #e4439a;}
+a {color: $white;}
 a:hover {text-decoration: none;}
 
 // specifics ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // members article
 .members {
-  padding: $verticalSpace*2 $gutter;
-  border: 6px solid $brandTwo; border-width: 6px 0px;
-  color: darken($brandTwo, 30%);
+  padding:$verticalSpace*2 0px;
 
-  @include backPattern(lighten($brandTwo,60%));
+  // @include backPattern(lighten($brandTwo,60%));
+  
   li {
     @extend .wrapper;
+    padding: 0px $gutter;
     list-style: none;
-    overflow: hidden;
+    overflow: auto;
+    h2 {text-transform: lowercase;}
     h2, p {float:right; width: 60%;}
     img {
       float: left;
@@ -67,17 +103,44 @@ a:hover {text-decoration: none;}
     &:nth-of-type(2n-1) {
       img {margin-right:$gutter;}
     }
+
+    @media screen and (max-width: 660px) {
+
+      h2, p {float:none; width:100%;}
+      &:nth-of-type(2n) {
+        img {
+          float:none; display:block;
+          margin:0px auto; width:60%;
+        }
+      }
+      &:nth-of-type(2n-1) {
+        img {
+          float:none; display:block;
+          margin:0px auto; width:60%;
+        }
+      }
+
+    }
+
   }
+}
+
+.work {
+  padding: $verticalSpace $gutter;
+
+  background-image:
+    linear-gradient(185deg, $brandTwo 80%, transparent 80%);
 }
 
 
 // get in touch
 .contact {
+  padding: $verticalSpace $gutter;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 
-  padding: $verticalSpace $gutter; margin-top:$verticalSpace;
-  border: 6px solid $brandThree; border-width: 6px 0px;
-  color: darken($brandThree, 30%);
-
+  background-color: $orange;
+  @include gradient($orange, $yellow, 80deg);
+  
   h2, h3, p {@extend .wrapper; padding:$verticalSpace 0px;}
 
 }

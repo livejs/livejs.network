@@ -1,6 +1,6 @@
 ---
 name: Martin Schuhfuss
-order: 6
+order: 2
 collection: biography
 image: prof-martin.png
 image-alt: Head shot of Martin
