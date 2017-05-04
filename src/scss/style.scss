@@ -1,5 +1,6 @@
 @import '_reset.scss';
 @import '_settings.scss';
+@import '../font-awesome/css/font-awesome.css';
 
 // structure & main partials ~~~~~~~~~~~~~~
 html {
@@ -15,7 +16,7 @@ body {
     linear-gradient(-130deg, transparent 50%, lighten($turquoise, 25%) 50.1%, lighten($turquoise, 25%) 80%, transparent 80.1%),
     linear-gradient(-120deg, transparent 32%, $turquoise 32.1%, $turquoise 60%, transparent 60.1%)
   ;
-  
+
   font-family: 'Klartext', monospace ;
   font-size: 100%;
   color: $white;
@@ -83,7 +84,7 @@ a:hover {text-decoration: none;}
   padding:$verticalSpace*2 0px;
 
   // @include backPattern(lighten($brandTwo,60%));
-  
+
   li {
     @extend .wrapper;
     padding: 0px $gutter;
@@ -140,12 +141,22 @@ a:hover {text-decoration: none;}
 
   background-color: $orange;
   @include gradient($orange, $yellow, 80deg);
-  
+
   h2, h3, p {@extend .wrapper; padding:$verticalSpace 0px;}
 
 }
 
+.fa {
+  text-shadow: none
+}
 
+a .fa {
+  opacity: 0.6
+}
+
+a:hover .fa {
+  opacity: 1
+}
 
 
 /* screen sizes: > 960, 480 < 960, 0 < 480 */
