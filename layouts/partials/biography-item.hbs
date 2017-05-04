@@ -1,8 +1,22 @@
 <li>
-  <h2>{{name}}</h2>
-    <picture>
-      <source srcset="images/{{image}}" media="(min-width: 600px)">
-      <img src="images/{{image}}" alt="{{image-alt}}">
-    </picture>
-    {{{contents}}}
+  <h2>
+    {{name}}
+    {{#if twitter}}
+      <a href='https://twitter.com/{{twitter}}' title='@{{twitter}} on Twitter'><i class="fa fa-inverse fa-twitter" aria-hidden="true"></i></a>
+    {{/if}}
+    {{#if github}}
+      <a href='https://github.com/{{github}}' title='{{github}} on GitHub'><i class="fa fa-inverse fa-github" aria-hidden="true"></i></a>
+    {{/if}}
+    {{#if soundcloud}}
+      <a href='https://soundcloud.com/{{soundcloud}}' title='{{soundcloud}} on SoundCloud'><i class="fa fa-inverse fa-soundcloud" aria-hidden="true"></i></a>
+    {{/if}}
+    {{#if youtube}}
+      <a href='https://youtube.com/user/{{youtube}}' title='{{youtube}} on YouTube'><i class="fa fa-inverse fa-youtube" aria-hidden="true"></i></a>
+    {{/if}}
+  </h2>
+  <picture>
+    <source srcset="images/{{image}}" media="(min-width: 600px)">
+    <img src="images/{{image}}" alt="{{image-alt}}">
+  </picture>
+  {{{contents}}}
 </li>
