@@ -1,8 +1,10 @@
 <div class="member-card">
-  <section class="member-bio">
-    <h2>{{name}}</h2>
-    {{{contents}}}
-  </section>
+  <h2>{{name}}</h2>
+  <p class="member-bio">
+    <span class="space-left"></span>
+    <span class="space-right"></span>
+    {{contents}}
+  </p>
   <section class="member-pic">
     <picture>
       <source srcset="images/{{image}}" media="(min-width: 600px)">

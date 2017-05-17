@@ -126,6 +126,70 @@ a:hover {text-decoration: none;}
   }
 }
 
+.member-card {
+  width:400px;
+  height:400px;
+  position:relative;
+
+  h2 {
+    position: relative;
+    z-index: 5;
+    font-size: 2em;
+    transform:rotate(315deg) translate(-30px, 20px);
+  }
+
+  &:hover img {
+    filter: saturate(0.5);
+    opacity:0.5;
+  }
+    
+  .member-bio {
+    position: relative;
+    z-index: 5;
+    top:140px;
+    text-align: justify;
+    /*padding:40px 20px 20px;*/
+    .space-left {
+      shape-outside: polygon(10% 0%, 100% 100%, 0% 100%);
+      float: left;
+      width: 50%;
+      height: 180px;
+    }
+    .space-right {
+      shape-outside: polygon(90% 0%, 90% 100%, 0% 100%);
+      float: right;
+      width: 49%;
+      height: 200px;
+    }
+  }
+
+  .member-pic {
+    z-index: 4; height:400px;
+    position: absolute; top:0px; left:0px;
+    clip-path: polygon(200px 0px, 400px 200px, 200px 400px, 0px 200px);
+
+    background-color: purple;
+    background-image: linear-gradient(45deg, hsla(268, 46%, 50%, 1), hsla(173, 62%, 45%, 1));
+
+    img {
+      width:auto; height:400px;
+      opacity:1;
+      mix-blend-mode: overlay;
+    }
+  }
+
+
+  .member-social {
+    position:absolute; top:0px; right:0px;
+    z-index: 5;
+    padding:20px;
+    transform:rotate(45deg) translate(10px, 80px);
+  }
+
+  a {color:white;}
+
+}
+
 .work {
   padding: $verticalSpace $gutter;
 
