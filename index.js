@@ -56,9 +56,7 @@ Metalsmith(__dirname)
   //   }
   // }))
 
-  .use(layouts({
-    engine: 'handlebars'
-  }))
+  .use(layouts('handlebars'))
 
   .use(serve())
 
