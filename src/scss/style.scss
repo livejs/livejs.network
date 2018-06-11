@@ -4,7 +4,7 @@
 
 // structure & main partials ~~~~~~~~~~~~~~
 html {
-  background-color: $orange;
+  background-color: $purple;
   @include gradient($orange, $yellow, 80deg);
 }
 body {
@@ -25,7 +25,7 @@ body {
 
 #grad {
   position: absolute; top:0px; right:0px;
-  width:30vw; min-height:2500px;
+  width:30vw; min-height:2800px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 90% 100%);
   @include gradient($turquoise, $purple, 120deg);
 
@@ -70,7 +70,7 @@ h1, h2 {
 h1 {font-size: 3.6em;}
 h2 {font-size: 2.4em;}
 p {
-  font-size: 1.3em;
+  font-size: 1.4em;
   margin-bottom: 0.8em;
 }
 p.lede {font-size: 1.3em;}
@@ -85,37 +85,47 @@ a:hover {text-decoration: none;}
 
   // @include backPattern(lighten($brandTwo,60%));
 
-  li {
+  .member-card {
     @extend .wrapper;
     padding: 0px $gutter;
     list-style: none;
     overflow: auto;
+
     h2 {text-transform: lowercase;}
-    h2, p {float:right; width: 60%;}
-    img {
-      float: left;
-      width:36%; height:auto;
+    .member-header {background-image: none; padding:0px;}
+    .member-header, .member-bio {float:right; width: 55%;}
+
+    .member-social {
+      padding-bottom: $verticalSpace;
+      a {font-size: 200%;}
     }
 
+    .member-pic {
+      float: left;
+      width:40%; height:auto;
+      img {display: block; width: 100%; height: auto;}
+    }
     &:nth-of-type(2n) {
-      h2, p {float:left;}
-      img {float:right; margin-left:$gutter;}
+      .member-header, .member-bio {float:left;}
+      .member-pic {float:right; margin-left:$gutter;}
     }
     &:nth-of-type(2n-1) {
-      img {margin-right:$gutter;}
+      .member-pic {margin-right:$gutter;}
     }
+
+    a {color:white;}
 
     @media screen and (max-width: 660px) {
 
-      h2, p {float:none; width:100%;}
+      .member-header, .member-bio {float:none; width:100%;}
       &:nth-of-type(2n) {
-        img {
+        .member-pic {
           float:none; display:block;
           margin:0px auto; width:60%;
         }
       }
       &:nth-of-type(2n-1) {
-        img {
+        .member-pic {
           float:none; display:block;
           margin:0px auto; width:60%;
         }
@@ -124,70 +134,6 @@ a:hover {text-decoration: none;}
     }
 
   }
-}
-
-.member-card {
-  width:400px;
-  height:400px;
-  position:relative;
-
-  h2 {
-    position: relative;
-    z-index: 5;
-    font-size: 2em;
-    transform:rotate(315deg) translate(-30px, 20px);
-  }
-
-  &:hover img {
-    filter: saturate(0.5);
-    opacity:0.5;
-  }
-    
-  .member-bio {
-    position: relative;
-    z-index: 5;
-    top:140px;
-    text-align: justify;
-    /*padding:40px 20px 20px;*/
-    .space-left {
-      shape-outside: polygon(10% 0%, 100% 100%, 0% 100%);
-      float: left;
-      width: 50%;
-      height: 180px;
-    }
-    .space-right {
-      shape-outside: polygon(90% 0%, 90% 100%, 0% 100%);
-      float: right;
-      width: 49%;
-      height: 200px;
-    }
-  }
-
-  .member-pic {
-    z-index: 4; height:400px;
-    position: absolute; top:0px; left:0px;
-    clip-path: polygon(200px 0px, 400px 200px, 200px 400px, 0px 200px);
-
-    background-color: purple;
-    background-image: linear-gradient(45deg, hsla(268, 46%, 50%, 1), hsla(173, 62%, 45%, 1));
-
-    img {
-      width:auto; height:400px;
-      opacity:1;
-      mix-blend-mode: overlay;
-    }
-  }
-
-
-  .member-social {
-    position:absolute; top:0px; right:0px;
-    z-index: 5;
-    padding:20px;
-    transform:rotate(45deg) translate(10px, 80px);
-  }
-
-  a {color:white;}
-
 }
 
 .work {

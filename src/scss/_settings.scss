@@ -3,7 +3,7 @@
 // fonts
 // colours & gradients
 // sizing
-// 
+//
 // temp colour (for top of site when I'm designing)
 // legacy
 //
@@ -52,7 +52,7 @@ $gutter: 1.5em;
 
 .wrapper {
   display: block;
-  max-width: 880px;
+  max-width: 980px;
   margin: 0px auto;
 }
 
@@ -101,7 +101,7 @@ $screenSmall: 480px;
   background-image:
     radial-gradient(circle,
       transparentize(darken($colour,15%),0.97),
-      transparentize(lighten($colour,85%),0.98)), 
+      transparentize(lighten($colour,85%),0.98)),
     linear-gradient(135deg,
       darken($colour,3%) 5%,
       $colour 6%,

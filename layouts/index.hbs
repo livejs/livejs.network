@@ -37,11 +37,9 @@
       </header>
 
       <article class="members">
-        <ul>
-          {{#each collections.biography as |biography-item idx|}}
-          {{> biography-item biography-item=biography-item }}
-          {{/each}}
-        </ul>
+        {{#each collections.biography as |biography-item idx|}}
+        {{> biography-item biography-item=biography-item }}
+        {{/each}}
       </article>
 
       {{!-- <article class="work">
