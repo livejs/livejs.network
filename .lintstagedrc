@@ -1,5 +1,5 @@
 {
-  "www/js/src/**/*.js": [
+  "src/**/*.js": [
      "prettier-eslint --write",
      "git add"
    ]
