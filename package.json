@@ -26,7 +26,7 @@
   "homepage": "livejs.network",
   "dependencies": {
     "mime": "^1.2.9",
-    "handlebars": "^4.3.0",
+    "handlebars": "^4.4.5",
     "jstransformer-handlebars": "^1.1.0",
     "metalsmith": "^2.2.0",
     "metalsmith-collections": "^0.9.0",
